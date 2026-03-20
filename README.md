@@ -132,7 +132,5 @@ To redeploy after making changes:
 
 This project is open source and available under the [MIT License](LICENSE).
 
----
 
-<p align="center">Made with ♥ and lots of coffee</p>
 

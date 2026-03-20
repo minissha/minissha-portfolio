@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minissha — Portfolio</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==============================
+       CUSTOM CURSOR
+  ================================ -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- ==============================
+       MOBILE MENU OVERLAY
+  ================================ -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileClose">✕</button>
+        <a href="#hero" onclick="closeMobile()">Home</a>
+        <a href="#about" onclick="closeMobile()">About</a>
+        <a href="#projects" onclick="closeMobile()">Projects</a>
+        <a href="#contact" onclick="closeMobile()">Contact</a>
+    </div>
+
+    <!-- ==============================
+       NAVIGATION
+  ================================ -->
+    <nav id="navbar">
+        <a href="#hero" class="nav-logo">Minissha<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger" onclick="toggleMobile()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- ==============================
+       SECTION 1 — HERO
+  ================================ -->
+    <section id="hero">
+        <div class="hero-inner">
+
+            <!-- Left: Text Content -->
+            <div class="hero-left">
+                <p class="hero-eyebrow">✦My Portfolio Website</p>
+                <h1 class="hero-title">
+                    HELLO,<br>
+                    I'M <span class="accent">Minissha</span><br>
+                    <span class="outline">Thakur</span>
+                </h1>
+                <p class="hero-desc">
+                    <strong>Code. Curiosity. Consistency.</strong><br>
+
+                    I’m Minissha — a tech enthusiast turning ideas into projects and goals into action.<br>
+                    I like building things, solving problems, and stepping out of my comfort zone — whether it’s a
+                    classroom, a new concept, or a leadership role.
+                    <br>Big goals, global mindset, and a long way to go — but I’m all in.
+                </p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn-primary">Project ↘</a>
+                    <a href="#contact" class="btn-outline">Get In Touch</a>
+                </div>
+            </div>
+
+            <!-- Right: Photo -->
+            <div class="hero-right">
+                <div class="hero-photo-wrap">
+                    <div class="hero-photo-bg"></div>
+                    <div class="hero-photo-frame"></div>
+                    <img class="hero-photo" src="mini.jpg" alt="mini">
+                    <div class="hero-tag hero-tag-1">B.Tech / IT</div>
+                    <div class="hero-tag hero-tag-2">minissha.dev</div>
+                    <div class="floating-badge">
+                        code. debug. repeat.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="hero-scroll-indicator">
+            <div class="scroll-line"></div>
+            SCROLL
+        </div>
+    </section>
+
+    <!-- ==============================
+       SECTION 2 — ABOUT
+  ================================ -->
+    <section id="about">
+        <div class="about-inner">
+
+            <!-- Left: Bio + Skills -->
+            <div class="about-left">
+                <p class="section-label reveal from-left">Who I Am</p>
+                <h2 class="section-title reveal from-left reveal-delay-1">ABOUT<br>ME.</h2>
+                <p class="about-intro reveal reveal-delay-2">
+                    Hi, I’m Minissha Thakur, a B.Tech IT student with a strong interest in technology and
+                    problem-solving.
+                    I enjoy building projects, exploring new concepts, and strengthening my skills in web development,
+                    data structures, and programming. I believe in learning by doing and consistently work on improving
+                    my technical and creative abilities.
+                    Alongside academics, I actively engage in collaborative environments where I can contribute, learn,
+                    and grow through real-world experiences.
+                    I’m always curious, adaptable, and driven to become better every day.
+
+                </p>
+
+                <!-- Stats -->
+                <div class="about-highlights reveal reveal-delay-3">
+                    <div class="highlight-card">
+                        <strong>3+</strong>
+                        <span>Projects Built</span>
+                    </div>
+                    <div class="highlight-card">
+                        <strong>IT</strong>
+                        <span>undergrad</span>
+                    </div>
+                    <div class="highlight-card">
+                        <strong>5+</strong>
+                        <span>Tech Stacks</span>
+                    </div>
+                    <div class="highlight-card">
+                        <strong>3+</strong>
+                        <span>PROGRAMMING LANGUAGES</span>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="reveal reveal-delay-4">
+                    <p class="section-label">Technical Skills</p>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h5>PROGRAMMING</h5>
+                            <div class="skill-tags">
+                                <span class="skill-tag highlight">C</span>
+                                <span class="skill-tag">C++</span>
+                                <span class="skill-tag">Python</span>
+
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h5>Coding</h5>
+                            <div class="skill-tags">
+                                <span class="skill-tag highlight">HTML/CSS</span>
+                                <span class="skill-tag">JS</span>
+                                <span class="skill-tag">PHP</span>
+                                <span class="skill-tag">MySQL</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h5>AI / ML</h5>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Scikit-learn </span>
+                                <span class="skill-tag">TensorFlow</span>
+                                <span class="skill-tag"> Keras </span>
+                                <span class="skill-tag"> Numpy </span>
+                                <span class="skill-tag"> Pandas </span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h5>Tools</h5>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Git/Github</span>
+                                <span class="skill-tag">Vs Code</span>
+                                <span class="skill-tag highlight">Jupyter</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Timeline -->
+            <div class="about-right">
+
+                <!-- Education -->
+                <div class="timeline-group reveal from-right">
+                    <h3 class="timeline-group-title"><span></span> Education</h3>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2024–2028</div>
+                        <div class="timeline-content">
+                            <h4>Manipal University, Jaipur</h4>
+                            <p>BTECH | INFORMATION TECHNOLOGY</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2022-2024</div>
+                        <div class="timeline-content">
+                            <h4>Delhi Public School, Navi Mumbai</h4>
+                            <p>SENIOR SECONDARY | PCM ,CS ,PE</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2010-2022</div>
+                        <div class="timeline-content">
+                            <h4>Apeejay School, Nerul</h4>
+                            <p>NURSERY - X</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience -->
+                <div class="timeline-group reveal from-right reveal-delay-2">
+                    <h3 class="timeline-group-title"><span></span> Experience</h3>
+                    <div class="timeline-item">
+                        <div class="timeline-year">May 2025- May 2026</div>
+                        <div class="timeline-content">
+                            <h4>Team Head – Marketing <br>MUJ ACM SIGBED Student Chapter</h4>
+                            <p>Led marketing initiatives for Elicit 2026, driving
+                                promotions, outreach strategies, and audience
+                                engagement for the college’s flagship tech fest
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">Jan 2026- Nov 2026</div>
+                        <div class="timeline-content">
+                            <h4>Senior Working Team <br> Rotaract Club
+                                (International service domain)</h4>
+                            <p>Executed large-scale social impact events including
+                                Carnival, NGO Mela, and Daan Utsav, contributing to
+                                planning, coordination, and community engagement</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">Jan 2026- Nov 2026</div>
+                        <div class="timeline-content">
+                            <h4>Core Committee – Hospitality<br> IIC 2.0</h4>
+                            <p>Handled guest relations, logistics, and event
+                                coordination, ensuring smooth hospitality operations
+                                during institutional eventt</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activities -->
+                <div class="timeline-group reveal from-right reveal-delay-3">
+                    <h3 class="timeline-group-title"><span></span> Certificates</h3>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2025</div>
+                        <div class="timeline-content">
+                            <h4>SQL for Data Science </h4>
+                            <p> University of California, Davis</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2025</div>
+                        <div class="timeline-content">
+                            <h4>Introduction to HTML, CSS & JavaScript </h4>
+                            <p>IBM</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2025</div>
+                        <div class="timeline-content">
+                            <h4>Programming Fundamentals </h4>
+                            <p>Duke University</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2024</div>
+                        <div class="timeline-content">
+                            <h4>Programming for Everybody (Getting Started with
+                                Python) </h4>
+                            <p>University of Michigan </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2021</div>
+                        <div class="timeline-content">
+                            <h4>Introduction to Computer Science and Programming
+                                Using Python</h4>
+                            <p> MITx (edX) </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==============================
+       SECTION 3 — PROJECTS
+  ================================ -->
+    <section id="projects">
+        <div class="projects-inner">
+
+            <div class="projects-header">
+                <div>
+                    <p class="section-label reveal">Selected Work</p>
+                    <h2 class="section-title reveal reveal-delay-1">MY<br>PROJECTS.</h2>
+                </div>
+                <a href="#contact" class="btn-outline reveal reveal-delay-2" style="color:var(--ivory)">All Projects
+                    ↗</a>
+            </div>
+
+            <div class="projects-grid">
+
+                <!-- Project 1 (wide) -->
+                <div class="project-card reveal reveal-delay-1">
+                    <div class="project-img-wrap">
+                        <div class="project-img proj-bg-1">
+                            <div class="proj-bg-decoration" data-label="BRAND">
+                                <span class="proj-icon">🎨</span>
+                            </div>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-overlay-icon">↗</div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <p class="project-category">WEB DEVELOPMENT</p>
+                        <h3 class="project-name">PERSONAL PORTFOLIO WEBSITE</h3>
+                        <p class="project-desc">Designed and developed a responsive personal 
+                            portfolio website to showcase projects, technical skills, and contact details with an interactive 
+                            and modern user interface.</p>
+                        <div class="project-techs">
+                            <span class="project-tech">HTML</span>
+                            <span class="project-tech">CSS</span>
+                            <span class="project-tech">JavaScript</span>
+                        
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card reveal reveal-delay-2">
+                    <div class="project-img-wrap">
+                        <div class="project-img proj-bg-2">
+                            <div class="proj-bg-decoration" data-label="Finance">
+                                <span class="proj-icon">📱</span>
+                            </div>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-overlay-icon">↗</div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <p class="project-category">MACHINE LEARNING / FINANCE</p>
+                        <h3 class="project-name">AI FRAUD DETECTION SYSTEM</h3>
+                        <p class="project-desc">Developed a machine learning model to detect 
+                            fraudulent financial transactions using data preprocessing, feature engineering, and classification techniques.</p>
+                        <div class="project-techs">
+                            <span class="project-tech">Python</span>
+                            <span class="project-tech">Scikit -Learn </span>
+                             <span class="project-tech">Pandas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card reveal reveal-delay-3">
+                    <div class="project-img-wrap">
+                        <div class="project-img proj-bg-3">
+                            <div class="proj-bg-decoration" data-label="Health">
+                                <span class="proj-icon">💻</span>
+                            </div>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-overlay-icon">↗</div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <p class="project-category">AI / HEALTHCARE</p>
+                        <h3 class="project-name">EYE.AI – DISEASE DETECTION</h3>
+                        <p class="project-desc">FBuilt an AI-based system to detect eye diseases using
+                             smartphone images with deep learning models for accurate and efficient diagnosis.</p>
+                        <div class="project-techs">
+                            <span class="project-tech">TensorFlow</span>
+                            <span class="project-tech">Keras</span>
+                        </div>
+                    </div>
+                </div>
+
+               
+    </section>
+
+    <!-- ==============================
+       SECTION 4 — CONTACT
+  ================================ -->
+    <section id="contact">
+        <div class="contact-inner">
+
+            <!-- Left: Info + Links -->
+            <div class="contact-left">
+                <p class="section-label reveal">Say Hello</p>
+                <h2 class="section-title reveal reveal-delay-1">LET'S<br>WORK<br>TOGETHER.</h2>
+                <p class="contact-tagline reveal reveal-delay-2">
+                    Have a project in mind? Want to collaborate or just want to chat about design and tech?
+                    My inbox is always open.
+                </p>
+                <div class="contact-links reveal reveal-delay-3">
+                    <a href="mailto:minisshathakur@outlook.com" class="contact-link">
+                        <div class="contact-link-icon">✉</div>
+                        <div class="contact-link-text">
+                            <strong>Email</strong>
+                           minisshathakur@outlook.com
+                        </div>
+                    </a>
+                    <a href="linkedin.com/in/minissha-thakur3496962a9" class="contact-link" target="_blank">
+                        <div class="contact-link-icon">in</div>
+                        <div class="contact-link-text">
+                            <strong>LinkedIn</strong>
+                            linkedin.com/in/minissha-thakur
+                        </div>
+                    </a>
+                    
+            </div><br><br>
+
+            <!-- Right: Contact Form -->
+            <div class="contact-right reveal from-right">
+                <h3 class="contact-form-title">Send A Message</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" placeholder="Minissha Thakur">
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="minisshathakur@outlook.com">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Subject</label>
+                    <input type="text" placeholder="Project Inquiry / Collab / Just saying hi">
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea
+                        placeholder="Tell me about your project, timeline, and what you're looking for..."></textarea>
+                </div>
+                <button class="form-submit">Send Message ↗</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==============================
+       FOOTER
+  ================================ -->
+    <footer>
+        <p>© 2026 Minissha Thakur <span>♥</span></p>
+        <div class="footer-links">
+            <a href="#hero">↑ Back to Top</a>
+            <a href="#">Resume</a>
+            <a href="https://github.com" target="_blank">GitHub</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

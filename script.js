@@ -1,45 +1,62 @@
 
+
+
 /* ============================================================
-   1. CUSTOM CURSOR
+   1. CUSTOM CURSOR - desktop only, hidden until mouse moves
 ============================================================ */
 
 const cursor     = document.getElementById('cursor');
 const cursorRing = document.getElementById('cursor-ring');
 
-let mouseX = 0, mouseY = 0;
-let ringX  = 0, ringY  = 0;
+// Only run cursor on devices that have a real mouse (not touch)
+if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
 
-document.addEventListener('mousemove', (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-  cursor.style.left = mouseX + 'px';
-  cursor.style.top  = mouseY + 'px';
-});
+  let mouseX = 0, mouseY = 0;
+  let ringX  = 0, ringY  = 0;
 
-function animateRing() {
-  ringX += (mouseX - ringX) * 0.12;
-  ringY += (mouseY - ringY) * 0.12;
-  cursorRing.style.left = ringX + 'px';
-  cursorRing.style.top  = ringY + 'px';
-  requestAnimationFrame(animateRing);
+  // Hide both until mouse first moves (stops them sitting in center on load)
+  cursor.style.opacity     = '0';
+  cursorRing.style.opacity = '0';
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursor.style.left    = mouseX + 'px';
+    cursor.style.top     = mouseY + 'px';
+    cursor.style.opacity = '1';
+    cursorRing.style.opacity = '0.6';
+  });
+
+  function animateRing() {
+    ringX += (mouseX - ringX) * 0.12;
+    ringY += (mouseY - ringY) * 0.12;
+    cursorRing.style.left = ringX + 'px';
+    cursorRing.style.top  = ringY + 'px';
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+
+  document.querySelectorAll('a, button, .project-card').forEach((el) => {
+    el.addEventListener('mouseenter', () => {
+      cursor.style.width           = '6px';
+      cursor.style.height          = '6px';
+      cursorRing.style.width       = '60px';
+      cursorRing.style.height      = '60px';
+      cursorRing.style.borderColor = 'var(--apricot)';
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.style.width      = '12px';
+      cursor.style.height     = '12px';
+      cursorRing.style.width  = '36px';
+      cursorRing.style.height = '36px';
+    });
+  });
+
+} else {
+  // Touch device - hide cursors completely
+  cursor.style.display     = 'none';
+  cursorRing.style.display = 'none';
 }
-animateRing();
-
-document.querySelectorAll('a, button, .project-card').forEach((el) => {
-  el.addEventListener('mouseenter', () => {
-    cursor.style.width           = '6px';
-    cursor.style.height          = '6px';
-    cursorRing.style.width       = '60px';
-    cursorRing.style.height      = '60px';
-    cursorRing.style.borderColor = 'var(--apricot)';
-  });
-  el.addEventListener('mouseleave', () => {
-    cursor.style.width      = '12px';
-    cursor.style.height     = '12px';
-    cursorRing.style.width  = '36px';
-    cursorRing.style.height = '36px';
-  });
-});
 
 
 /* ============================================================
@@ -97,7 +114,7 @@ document.getElementById('mobileClose').addEventListener('click', closeMobile);
 
 /* ============================================================
    4. SCROLL REVEAL - General elements
-   Resets only when element scrolls above the screen (scroll up)
+   Resets only when element scrolls above the screen
 ============================================================ */
 
 const revealElements = document.querySelectorAll('.reveal');
@@ -126,9 +143,7 @@ revealElements.forEach((el) => revealObserver.observe(el));
 
 /* ============================================================
    5. TIMELINE OBSERVER
-   Dedicated observer for right-side timeline items.
-   Resets in BOTH directions so it animates from-right
-   every single time you scroll up or down past it.
+   Resets in BOTH directions - animates every scroll pass
 ============================================================ */
 
 document.querySelectorAll('.timeline-item').forEach((item, index) => {
@@ -200,8 +215,7 @@ document.querySelectorAll('.skills-grid').forEach((grid) => {
 
 
 /* ============================================================
-   7. CONTACT FORM - connected to Formspree
-   Endpoint: https://formspree.io/f/mkoqepyp
+   7. CONTACT FORM - Formspree endpoint: mkoqepyp
 ============================================================ */
 
 const formSubmitBtn = document.querySelector('.form-submit');
@@ -213,7 +227,6 @@ formSubmitBtn.addEventListener('click', async function () {
   const subject = document.querySelectorAll('input[type="text"]')[1].value.trim();
   const message = document.querySelector('textarea').value.trim();
 
-  // Validation - make sure required fields are filled
   if (!name || !email || !message) {
     this.textContent      = 'Fill all fields first!';
     this.style.background = 'var(--amaranth)';
@@ -226,7 +239,6 @@ formSubmitBtn.addEventListener('click', async function () {
     return;
   }
 
-  // Loading state while sending
   this.textContent      = 'Sending...';
   this.style.background = 'var(--denim)';
   this.style.color      = 'var(--ivory)';
@@ -243,11 +255,9 @@ formSubmitBtn.addEventListener('click', async function () {
     });
 
     if (res.ok) {
-      // Success
       this.textContent      = 'Message Sent! ✓';
       this.style.background = 'var(--apricot)';
       this.style.color      = 'var(--dark)';
-      // Clear all fields
       document.querySelector('input[type="text"]').value       = '';
       document.querySelector('input[type="email"]').value      = '';
       document.querySelectorAll('input[type="text"]')[1].value = '';
@@ -257,7 +267,6 @@ formSubmitBtn.addEventListener('click', async function () {
     }
 
   } catch (err) {
-    // Error state
     this.textContent      = 'Something went wrong ✕';
     this.style.background = 'var(--amaranth)';
     this.style.color      = 'var(--ivory)';
@@ -273,23 +282,19 @@ formSubmitBtn.addEventListener('click', async function () {
 
 
 /* ============================================================
-   8. PROJECT CARD 3D TILT
+   8. PROJECT CARD 3D TILT - desktop only
 ============================================================ */
 
-document.querySelectorAll('.project-card').forEach((card) => {
-  card.addEventListener('mousemove', (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width  - 0.5;
-    const y = (e.clientY - rect.top)  / rect.height - 0.5;
-
-    card.style.transform = `
-      translateY(-6px)
-      rotateY(${x * 6}deg)
-      rotateX(${-y * 4}deg)
-    `;
+if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  document.querySelectorAll('.project-card').forEach((card) => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width  - 0.5;
+      const y = (e.clientY - rect.top)  / rect.height - 0.5;
+      card.style.transform = `translateY(-6px) rotateY(${x * 6}deg) rotateX(${-y * 4}deg)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
   });
-
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = '';
-  });
-});
+}

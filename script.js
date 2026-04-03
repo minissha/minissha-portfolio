@@ -1,10 +1,5 @@
 
 
-
-/* ============================================================
-   1. CUSTOM CURSOR - desktop only, hidden until mouse moves
-============================================================ */
-
 const cursor     = document.getElementById('cursor');
 const cursorRing = document.getElementById('cursor-ring');
 
@@ -59,9 +54,6 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
 }
 
 
-/* ============================================================
-   2. NAVIGATION - SCROLL SHRINK + ACTIVE LINK HIGHLIGHT
-============================================================ */
 
 const navbar = document.getElementById('navbar');
 
@@ -95,9 +87,6 @@ function updateActiveNav() {
 }
 
 
-/* ============================================================
-   3. MOBILE MENU
-============================================================ */
 
 const mobileMenu = document.getElementById('mobileMenu');
 
@@ -111,11 +100,6 @@ function closeMobile() {
 
 document.getElementById('mobileClose').addEventListener('click', closeMobile);
 
-
-/* ============================================================
-   4. SCROLL REVEAL - General elements
-   Resets only when element scrolls above the screen
-============================================================ */
 
 const revealElements = document.querySelectorAll('.reveal');
 
@@ -140,11 +124,6 @@ const revealObserver = new IntersectionObserver(
 
 revealElements.forEach((el) => revealObserver.observe(el));
 
-
-/* ============================================================
-   5. TIMELINE OBSERVER
-   Resets in BOTH directions - animates every scroll pass
-============================================================ */
 
 document.querySelectorAll('.timeline-item').forEach((item, index) => {
   item.classList.remove('from-left');
@@ -176,10 +155,6 @@ document.querySelectorAll('.timeline-item').forEach((item) => {
   timelineObserver.observe(item);
 });
 
-
-/* ============================================================
-   6. SKILL TAGS OBSERVER
-============================================================ */
 
 document.querySelectorAll('.skill-tag').forEach((tag, index) => {
   tag.style.opacity    = '0';
@@ -214,9 +189,6 @@ document.querySelectorAll('.skills-grid').forEach((grid) => {
 });
 
 
-/* ============================================================
-   7. CONTACT FORM - Formspree endpoint: mkoqepyp
-============================================================ */
 
 const formSubmitBtn = document.querySelector('.form-submit');
 
@@ -281,9 +253,6 @@ formSubmitBtn.addEventListener('click', async function () {
 });
 
 
-/* ============================================================
-   8. PROJECT CARD 3D TILT - desktop only
-============================================================ */
 
 if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
   document.querySelectorAll('.project-card').forEach((card) => {

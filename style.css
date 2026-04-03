@@ -1,9 +1,4 @@
 
-
-  
-/* ============================================================
-   1. CSS VARIABLES & RESET
-============================================================ */
 :root {
   --ivory:    #F6F7EB;
   --apricot:  #DB9B57;
@@ -35,9 +30,6 @@ body {
 }
 
 
-/* ============================================================
-   2. CURSOR
-============================================================ */
 .cursor {
   position: fixed;
   width: 12px;
@@ -68,9 +60,6 @@ body:hover .cursor {
 }
 
 
-/* ============================================================
-   3. NAVIGATION
-============================================================ */
 nav {
   position: fixed;
   top: 0;
@@ -91,7 +80,6 @@ nav.scrolled {
   padding: 0.8rem 4rem;
 }
 
-/* Logo */
 .nav-logo {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 1.6rem;
@@ -104,7 +92,7 @@ nav.scrolled {
   color: var(--apricot);
 }
 
-/* Nav Links */
+
 .nav-links {
   display: flex;
   gap: 2.5rem;
@@ -144,7 +132,7 @@ nav.scrolled {
   width: 100%;
 }
 
-/* CTA Button in Nav */
+
 .nav-cta {
   background: var(--apricot);
   color: var(--dark) !important;
@@ -162,7 +150,7 @@ nav.scrolled {
   color: var(--dark) !important;
 }
 
-/* Hamburger (mobile) */
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -179,7 +167,6 @@ nav.scrolled {
   transition: all 0.3s;
 }
 
-/* Mobile Menu Overlay */
 .mobile-menu {
   display: none;
   position: fixed;
@@ -221,9 +208,6 @@ nav.scrolled {
 }
 
 
-/* ============================================================
-   4. BUTTONS (SHARED)
-============================================================ */
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -272,16 +256,12 @@ nav.scrolled {
 }
 
 
-/* ============================================================
-   5. SECTION SHARED STYLES
-============================================================ */
 section {
   min-height: 100vh;
   position: relative;
   overflow: hidden;
 }
 
-/* Section label (eyebrow text) */
 .section-label {
   font-family: 'Space Mono', monospace;
   font-size: 0.72rem;
@@ -302,7 +282,7 @@ section {
   background: var(--amaranth);
 }
 
-/* Section title */
+
 .section-title {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(3.5rem, 6vw, 6rem);
@@ -311,9 +291,6 @@ section {
 }
 
 
-/* ============================================================
-   6. HERO SECTION
-============================================================ */
 #hero {
   display: flex;
   align-items: center;
@@ -331,7 +308,7 @@ section {
   align-items: center;
 }
 
-/* Hero — Left */
+
 .hero-left {
   position: relative;
 }
@@ -425,7 +402,7 @@ section {
   z-index: 2;
 }
 
-/* Actual photo (uncomment when you have one) */
+
 .hero-photo {
   position: relative;
   z-index: 1;
@@ -436,7 +413,7 @@ section {
   display: block;
 }
 
-/* Photo placeholder silhouette */
+
 .hero-photo-placeholder {
   position: relative;
   z-index: 1;
@@ -469,7 +446,7 @@ section {
   border-radius: 50%;
 }
 
-/* Tags on photo */
+
 .hero-tag {
   position: absolute;
   background: var(--denim);
@@ -491,7 +468,7 @@ section {
   background: var(--amaranth);
 }
 
-/* Floating badge */
+
 .floating-badge {
   position: absolute;
   bottom: -20px;
@@ -512,7 +489,7 @@ section {
   line-height: 1;
 }
 
-/* Scroll indicator */
+
 .hero-scroll-indicator {
   position: absolute;
   bottom: 2rem;
@@ -537,10 +514,6 @@ section {
   animation: scrollDown 1.5s ease-in-out infinite;
 }
 
-
-/* ============================================================
-   7. ABOUT SECTION
-============================================================ */
 #about {
   background: var(--ivory);
   color: var(--dark);
@@ -556,7 +529,7 @@ section {
   align-items: start;
 }
 
-/* About — Left */
+
 .about-left .section-title {
   color: var(--dark);
 }
@@ -572,7 +545,7 @@ section {
   margin-bottom: 2rem;
 }
 
-/* Stats cards */
+
 .about-highlights {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -933,16 +906,13 @@ section {
 
 
 
-/* ============================================================
-   9. CONTACT SECTION
-============================================================ */
 #contact {
   background: var(--dark);
   padding: 8rem 4rem;
   position: relative;
 }
 
-/* Large background text */
+
 #contact::before {
   content: 'CONTACT';
   position: absolute;
@@ -966,7 +936,7 @@ section {
   align-items: center;
 }
 
-/* Contact — Left */
+
 .contact-left .section-title {
   color: var(--ivory);
   margin-bottom: 1.5rem;
@@ -1034,7 +1004,6 @@ section {
   font-weight: 400;
 }
 
-/* Contact — Right: Form */
 .contact-form-title {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 2rem;
@@ -1114,10 +1083,6 @@ section {
   transform: translateY(-2px);
 }
 
-
-/* ============================================================
-   10. FOOTER
-============================================================ */
 footer {
   background: #060606;
   padding: 2rem 4rem;
@@ -1181,7 +1146,6 @@ footer p span {
   transform: translate(0, 0);
 }
 
-/* Stagger delay helpers */
 .reveal-delay-1 { transition-delay: 0.1s; }
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
@@ -1189,9 +1153,6 @@ footer p span {
 .reveal-delay-5 { transition-delay: 0.5s; }
 
 
-/* ============================================================
-   12. KEYFRAMES
-============================================================ */
 @keyframes fadeUp {
   to {
     opacity: 1;
@@ -1212,9 +1173,7 @@ footer p span {
 }
 
 
-/* ============================================================
-   13. NOISE TEXTURE OVERLAY
-============================================================ */
+
 body::after {
   content: '';
   position: fixed;
@@ -1226,9 +1185,6 @@ body::after {
 }
 
 
-/* ============================================================
-   14. RESPONSIVE — TABLET (max-width: 1024px)
-============================================================ */
 @media (max-width: 1024px) {
   nav,
   nav.scrolled {
@@ -1262,9 +1218,7 @@ body::after {
 }
 
 
-/* ============================================================
-   15. RESPONSIVE — MOBILE (max-width: 768px)
-============================================================ */
+
 @media (max-width: 768px) {
   nav         { padding: 1rem 1.5rem; }
   nav.scrolled { padding: 0.8rem 1.5rem; }
@@ -1342,9 +1296,7 @@ body::after {
 }
 
 
-/* ============================================================
-   16. RESPONSIVE — SMALL MOBILE (max-width: 480px)
-============================================================ */
+
 @media (max-width: 480px) {
   .hero-photo-wrap {
     width: 240px;
@@ -1360,9 +1312,6 @@ body::after {
   }
 }
 
-/* ============================================================
-   CURSOR — hide on touch/mobile devices
-============================================================ */
 @media (hover: none) and (pointer: coarse) {
   .cursor,
   .cursor-ring {

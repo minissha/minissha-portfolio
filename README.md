@@ -3,7 +3,6 @@
 A creative, fully responsive personal portfolio website built with vanilla HTML, CSS, and JavaScript. Designed with a bold editorial aesthetic using a warm color palette, scroll-triggered animations, and a custom cursor experience.
 
 Live Site: https://minissha-portfolio.netlify.app/
-
 Preview
 <img width="1860" height="793" alt="image" src="https://github.com/user-attachments/assets/74d38283-26cb-4f83-bb7d-51a6f5fd5ee7" />
 

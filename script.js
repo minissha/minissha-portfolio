@@ -3,13 +3,12 @@
 const cursor     = document.getElementById('cursor');
 const cursorRing = document.getElementById('cursor-ring');
 
-// Only run cursor on devices that have a real mouse (not touch)
 if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
 
   let mouseX = 0, mouseY = 0;
   let ringX  = 0, ringY  = 0;
 
-  // Hide both until mouse first moves (stops them sitting in center on load)
+ 
   cursor.style.opacity     = '0';
   cursorRing.style.opacity = '0';
 
